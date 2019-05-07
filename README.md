@@ -2,6 +2,8 @@
 
 **EARLY STAGE OF DEVELOPMENT**
 
+[![Build Status](https://travis-ci.com/habenamare/textbackup.svg?branch=master)](https://travis-ci.com/habenamare/textbackup)
+
 **textbackup** is a simple command line tool to backup your directory structure in
 text format, currently JSON (to be extended).
 

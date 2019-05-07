@@ -23,7 +23,7 @@ func TestPush(t *testing.T) {
 	if dirStack.top.value != aFileNode ||
 		dirStack.top.next.value != rootFileNode ||
 		dirStack.len != 2 {
-		t.Error("FileNode was not pushed to the DirStack properly.")
+		t.Error("[1] FileNode was not pushed to the DirStack properly.")
 	}
 
 	anotherFileNode := &FileNode{Name: "Another FileNode"}
@@ -32,7 +32,7 @@ func TestPush(t *testing.T) {
 	if dirStack.top.value != anotherFileNode ||
 		dirStack.top.next.value != aFileNode ||
 		dirStack.len != 3 {
-		t.Error("FileNode was not pushed to the DirStack properly.")
+		t.Error("[2] FileNode was not pushed to the DirStack properly.")
 	}
 }
 
@@ -41,9 +41,8 @@ func TestPop(t *testing.T) {
 	dirStack := NewDirStack(rootFileNode)
 
 	aFileNode := &FileNode{Name: "Some FileNode struct"}
-	dirStack.Push(aFileNode)
-
 	anotherFileNode := &FileNode{Name: "Another FileNode"}
+	dirStack.Push(aFileNode)
 	dirStack.Push(anotherFileNode)
 
 	popedFileNode := dirStack.Pop()
@@ -64,7 +63,7 @@ func TestPop(t *testing.T) {
 	if popedFileNode3 != rootFileNode ||
 		dirStack.top.value != rootFileNode ||
 		dirStack.len != 1 {
-		t.Error("[3] DirStack did not pop a FileNode properly.")
+		t.Error("[1] DirStack did not perform the Pop operation properly.")
 	}
 
 	dirStack.Pop()
@@ -73,7 +72,7 @@ func TestPop(t *testing.T) {
 	popedFileNode4 := dirStack.Pop()
 	if popedFileNode4 != rootFileNode ||
 		dirStack.len != 1 {
-		t.Error("DirStack did not perform the Pop operation properly.")
+		t.Error("[2] DirStack did not perform the Pop operation properly.")
 	}
 
 }
@@ -83,9 +82,8 @@ func TestString(t *testing.T) {
 	dirStack := NewDirStack(rootFileNode)
 
 	aFileNode := &FileNode{Name: "Some FileNode struct"}
-	dirStack.Push(aFileNode)
-
 	anotherFileNode := &FileNode{Name: "Another FileNode"}
+	dirStack.Push(aFileNode)
 	dirStack.Push(anotherFileNode)
 
 	testString := "Length: 3\nItems [bottom -> top]: Another FileNode -> Some FileNode struct -> root"
