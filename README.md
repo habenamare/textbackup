@@ -9,7 +9,7 @@ text format, currently JSON (to be extended).
 
 ## Why backup in text format?
 
-I think **textbackup** can be used as a better than nothing backing up tool, especially
-if the size of the files you want to backup is very large. I think sometimes just
-remembering how your files were layed out and which files were there can help you
-recreate your lost data if it can't be recovered by any means.
+A text format backup can be seen as a better-than-nothing backing up tool, especially
+if the size of the files you want to backup is very large. This is because sometimes
+just remembering how your files were layed out can help you recreate your lost data,
+if it can't be recovered by any means.
